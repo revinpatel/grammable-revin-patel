@@ -162,8 +162,9 @@ RSpec.describe GramsController, type: :controller do
       
       post :create, params: {
         gram: {
-          message: "Hello!"
-        } 
+          message: 'Hello!',
+          picture: fixture_file_upload("/picture.jpg", 'image/png')
+        }
       }
       expect(response).to redirect_to root_path
       
